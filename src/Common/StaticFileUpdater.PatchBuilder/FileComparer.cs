@@ -4,14 +4,14 @@ using System.Threading.Tasks;
 
 namespace StaticFileUpdater.PatchBuilder
 {
-    public class FileComparer
+    public class FileComparer : IFileComparer
     {
-		public static Task<bool> FilesAreEqualAsync(string filePath1, string filePath2)
+		public Task<bool> FilesAreEqualAsync(string filePath1, string filePath2)
 		{
 		    return Task.Run(() => FilesAreEqual(filePath1, filePath2));
 		}
 
-        public static bool FilesAreEqual(string filePath1, string filePath2)
+        public bool FilesAreEqual(string filePath1, string filePath2)
         {
             bool isEqual = false;
 
@@ -50,5 +50,10 @@ namespace StaticFileUpdater.PatchBuilder
 
             return isEqual;
         }
+    }
+
+    public interface IFileComparer
+    {
+        bool FilesAreEqual(string filePath1, string filePath2);
     }
 }

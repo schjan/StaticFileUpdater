@@ -8,10 +8,18 @@ namespace StaticFileUpdater.PatchBuilder.Tests
     [TestFixture]
     public class FileComparerTests
     {
+        FileComparer fileComparer;
+
+        [SetUp]
+        public void SetUp()
+        {
+            fileComparer = new FileComparer();
+        }
+
         [Test]
         public void Equal()
         {
-            var result = FileComparer.FilesAreEqual("TestFiles/A.txt", "TestFiles/B.txt");
+            var result = fileComparer.FilesAreEqual("TestFiles/A.txt", "TestFiles/B.txt");
 
             Assert.True(result);
         }
@@ -19,7 +27,7 @@ namespace StaticFileUpdater.PatchBuilder.Tests
 		[Test]
 		public async Task EqualAsync()
 		{
-			var result = await FileComparer.FilesAreEqualAsync("TestFiles/A.txt", "TestFiles/B.txt");
+			var result = await fileComparer.FilesAreEqualAsync("TestFiles/A.txt", "TestFiles/B.txt");
 
 			Assert.True(result);
 		}
@@ -27,7 +35,7 @@ namespace StaticFileUpdater.PatchBuilder.Tests
         [Test]
         public void UnequalA()
         {
-            var result = FileComparer.FilesAreEqual("TestFiles/A.txt", "TestFiles/NotEqual.txt");
+            var result = fileComparer.FilesAreEqual("TestFiles/A.txt", "TestFiles/NotEqual.txt");
 
             Assert.False(result);
         }
@@ -35,7 +43,7 @@ namespace StaticFileUpdater.PatchBuilder.Tests
         [Test]
         public async Task UnequalAAsync()
         {
-            var result = await FileComparer.FilesAreEqualAsync("TestFiles/A.txt", "TestFiles/NotEqual.txt");
+            var result = await fileComparer.FilesAreEqualAsync("TestFiles/A.txt", "TestFiles/NotEqual.txt");
 
             Assert.False(result);
         }
@@ -43,7 +51,7 @@ namespace StaticFileUpdater.PatchBuilder.Tests
         [Test]
         public void UnequalB()
         {
-            var result = FileComparer.FilesAreEqual("TestFiles/NotEqual.txt", "TestFiles/A.txt");
+            var result = fileComparer.FilesAreEqual("TestFiles/NotEqual.txt", "TestFiles/A.txt");
 
             Assert.False(result);
         }
@@ -51,19 +59,19 @@ namespace StaticFileUpdater.PatchBuilder.Tests
         [Test, ExpectedException(typeof(FileNotFoundException))]
         public void NoFileA()
         {
-            FileComparer.FilesAreEqual("TestFiles/C.txt", "TestFiles/A.txt");
+            fileComparer.FilesAreEqual("TestFiles/C.txt", "TestFiles/A.txt");
         }
 
         [Test, ExpectedException(typeof(FileNotFoundException))]
         public void NoFileB()
         {
-            FileComparer.FilesAreEqual("TestFiles/A.txt", "TestFiles/C.txt");
+            fileComparer.FilesAreEqual("TestFiles/A.txt", "TestFiles/C.txt");
         }
 
         [Test, ExpectedException(typeof(FileNotFoundException))]
         public async Task NoFileAAsync()
         {
-            await FileComparer.FilesAreEqualAsync("TestFiles/C.txt", "TestFiles/A.txt");
+            await fileComparer.FilesAreEqualAsync("TestFiles/C.txt", "TestFiles/A.txt");
         }
     }
 }
