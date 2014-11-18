@@ -7,18 +7,19 @@ using System.Threading.Tasks;
 using Fclp;
 using NLog;
 using StaticFileUpdater.PatchBuilder;
+using StaticFileUpdater.PatchBuilder.Helpers;
 
 namespace StaticFileUpdater.BuildTool
 {
-    class Program
+    public class Program
     {
         private static Logger logger = LogManager.GetLogger("CLI");
         private static BuildOptions options;
 
-        static int Main(string[] args)
+        public static int Main(string[] args)
         {
             Console.WriteLine("StaticFileUpdater BuildTool " + Assembly.GetExecutingAssembly().GetName().Version);
-            
+
             var p = new FluentCommandLineParser();
 
             p.Setup<bool>('s', "silent")
@@ -67,17 +68,18 @@ namespace StaticFileUpdater.BuildTool
                 return -1;
             }
 
-            if(options.SilentBuild)
+            if (options.SilentBuild)
                 LogManager.GlobalThreshold = LogLevel.Error;
 
             logger.Trace(() => "Now call Builder");
 
             var b = new Builder(options);
             b.Build();
-            
+
 #if DEBUG
             Console.WriteLine("Press any key to exit program");
-            Console.ReadLine();
+            if (!Help.InUnitTestRunner())
+                Console.ReadLine();
 #endif
 
             return 0;

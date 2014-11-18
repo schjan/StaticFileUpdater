@@ -16,11 +16,9 @@ namespace StaticFileUpdater.BuildTool.Tests
         [Test]
         public void TestHelp()
         {
-            using (var x = Process.Start(ExeFilePath, "h"))
-            {
-                x.WaitForExit();
-                Assert.That(x.ExitCode, Is.EqualTo(0));
-            }
+            var result = Program.Main(new []{"-h"});
+
+            Assert.That(result, Is.EqualTo(0));
         }
 
         [Test, Ignore("Es kan noch nix schiefgehen")]
