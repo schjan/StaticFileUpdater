@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{3FE4B7C5-BA45-4967-9DFA-7E7C9ABA83B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{846A7F89-B164-4E69-88D4-0D940025D3CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DF108EFA-2A2C-426B-9F2E-900B7F5E4BC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D5DC4B96-9590-4B5C-8C1F-5940C23C9978}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{A612EF2D-5CDF-446E-B39C-4DF1C10017CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.BuildTool", "Tools\StaticFileUpdater.BuildTool\StaticFileUpdater.BuildTool.csproj", "{945B0DAC-2710-42D7-BEB3-30B45BC085A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.BuildTool.Tests", "Tests\StaticFileUpdater.BuildTool.Tests\StaticFileUpdater.BuildTool.Tests.csproj", "{1D8C4C15-3556-4C04-A11E-6791C3FFD384}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.PatchBuilder", "Common\StaticFileUpdater.PatchBuilder\StaticFileUpdater.PatchBuilder.csproj", "{219522E7-D92F-4F4B-886C-37446D8F452D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.PatchBuilder.Tests", "Tests\StaticFileUpdater.PatchBuilder.Tests\StaticFileUpdater.PatchBuilder.Tests.csproj", "{182853A6-1CA9-43ED-9E27-A6C6FCE013BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{945B0DAC-2710-42D7-BEB3-30B45BC085A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945B0DAC-2710-42D7-BEB3-30B45BC085A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945B0DAC-2710-42D7-BEB3-30B45BC085A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945B0DAC-2710-42D7-BEB3-30B45BC085A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D8C4C15-3556-4C04-A11E-6791C3FFD384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D8C4C15-3556-4C04-A11E-6791C3FFD384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D8C4C15-3556-4C04-A11E-6791C3FFD384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D8C4C15-3556-4C04-A11E-6791C3FFD384}.Release|Any CPU.Build.0 = Release|Any CPU
+		{219522E7-D92F-4F4B-886C-37446D8F452D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219522E7-D92F-4F4B-886C-37446D8F452D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219522E7-D92F-4F4B-886C-37446D8F452D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219522E7-D92F-4F4B-886C-37446D8F452D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{182853A6-1CA9-43ED-9E27-A6C6FCE013BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{182853A6-1CA9-43ED-9E27-A6C6FCE013BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{182853A6-1CA9-43ED-9E27-A6C6FCE013BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{182853A6-1CA9-43ED-9E27-A6C6FCE013BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{945B0DAC-2710-42D7-BEB3-30B45BC085A9} = {A612EF2D-5CDF-446E-B39C-4DF1C10017CC}
+		{1D8C4C15-3556-4C04-A11E-6791C3FFD384} = {DF108EFA-2A2C-426B-9F2E-900B7F5E4BC3}
+		{219522E7-D92F-4F4B-886C-37446D8F452D} = {D5DC4B96-9590-4B5C-8C1F-5940C23C9978}
+		{182853A6-1CA9-43ED-9E27-A6C6FCE013BA} = {DF108EFA-2A2C-426B-9F2E-900B7F5E4BC3}
+	EndGlobalSection
+EndGlobal
