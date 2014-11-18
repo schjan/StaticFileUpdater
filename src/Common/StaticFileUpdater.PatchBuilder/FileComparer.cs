@@ -6,6 +6,10 @@ namespace StaticFileUpdater.PatchBuilder
 {
     public class FileComparer
     {
+		public static Task<bool> FilesAreEqualAsync(string filePath1, string filePath2){
+			return Task.Run (() => FilesAreEqual (filePath1, filePath2));
+		}
+
         public static bool FilesAreEqual(string filePath1, string filePath2)
         {
             bool isEqual = false;
