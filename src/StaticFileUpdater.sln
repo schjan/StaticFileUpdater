@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{A612EF2D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.BuildTool", "Tools\StaticFileUpdater.BuildTool\StaticFileUpdater.BuildTool.csproj", "{945B0DAC-2710-42D7-BEB3-30B45BC085A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.BuildTool.Tests", "Tests\StaticFileUpdater.BuildTool.Tests\StaticFileUpdater.BuildTool.Tests.csproj", "{1D8C4C15-3556-4C04-A11E-6791C3FFD384}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.PatchBuilder", "Common\StaticFileUpdater.PatchBuilder\StaticFileUpdater.PatchBuilder.csproj", "{219522E7-D92F-4F4B-886C-37446D8F452D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.PatchBuilder.Tests", "Tests\StaticFileUpdater.PatchBuilder.Tests\StaticFileUpdater.PatchBuilder.Tests.csproj", "{182853A6-1CA9-43ED-9E27-A6C6FCE013BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.BuildTool.Tests", "Tests\StaticFileUpdater.BuildTool.Tests\StaticFileUpdater.BuildTool.Tests.csproj", "{0E7CA4EF-488A-4144-AEFB-35F6FA08A882}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,6 @@ Global
 		{945B0DAC-2710-42D7-BEB3-30B45BC085A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{945B0DAC-2710-42D7-BEB3-30B45BC085A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{945B0DAC-2710-42D7-BEB3-30B45BC085A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D8C4C15-3556-4C04-A11E-6791C3FFD384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D8C4C15-3556-4C04-A11E-6791C3FFD384}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D8C4C15-3556-4C04-A11E-6791C3FFD384}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D8C4C15-3556-4C04-A11E-6791C3FFD384}.Release|Any CPU.Build.0 = Release|Any CPU
 		{219522E7-D92F-4F4B-886C-37446D8F452D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{219522E7-D92F-4F4B-886C-37446D8F452D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{219522E7-D92F-4F4B-886C-37446D8F452D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,14 +39,18 @@ Global
 		{182853A6-1CA9-43ED-9E27-A6C6FCE013BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{182853A6-1CA9-43ED-9E27-A6C6FCE013BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{182853A6-1CA9-43ED-9E27-A6C6FCE013BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7CA4EF-488A-4144-AEFB-35F6FA08A882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7CA4EF-488A-4144-AEFB-35F6FA08A882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7CA4EF-488A-4144-AEFB-35F6FA08A882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7CA4EF-488A-4144-AEFB-35F6FA08A882}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{945B0DAC-2710-42D7-BEB3-30B45BC085A9} = {A612EF2D-5CDF-446E-B39C-4DF1C10017CC}
-		{1D8C4C15-3556-4C04-A11E-6791C3FFD384} = {DF108EFA-2A2C-426B-9F2E-900B7F5E4BC3}
 		{219522E7-D92F-4F4B-886C-37446D8F452D} = {D5DC4B96-9590-4B5C-8C1F-5940C23C9978}
 		{182853A6-1CA9-43ED-9E27-A6C6FCE013BA} = {DF108EFA-2A2C-426B-9F2E-900B7F5E4BC3}
+		{0E7CA4EF-488A-4144-AEFB-35F6FA08A882} = {DF108EFA-2A2C-426B-9F2E-900B7F5E4BC3}
 	EndGlobalSection
 EndGlobal
