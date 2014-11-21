@@ -12,9 +12,9 @@ namespace StaticFileUpdater.PatchBuilder.Tests
     [TestFixture]
     public class FileCompressorTests
     {
-        private const string TestDir = "CompressTest";
-        private const string TestZip = "CompressTest.zip";
-        private const string TestFilesDir = "TestFiles";
+        public const string TestDir = "CompressTest";
+        public const string TestZip = "CompressTest.zip";
+        public const string TestFilesDir = "TestFiles";
         private FileCompressor fileCompressor;
         
         [SetUp]

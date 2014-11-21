@@ -53,10 +53,17 @@
     <Compile Include="FileCompressor.cs" />
     <Compile Include="Builder.cs" />
     <Compile Include="Helpers\Help.cs" />
+    <Compile Include="PatchBuild.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StaticFileUpdater.Common\StaticFileUpdater.Common.csproj">
+      <Project>{1f75e6b6-837c-4a66-aa7e-df6c14dd131e}</Project>
+      <Name>StaticFileUpdater.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

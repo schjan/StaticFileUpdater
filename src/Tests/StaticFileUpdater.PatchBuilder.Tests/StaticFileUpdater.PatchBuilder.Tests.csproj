@@ -57,6 +57,7 @@
     <Compile Include="FileComparerTests.cs" />
     <Compile Include="FileCompressorTests.cs" />
     <Compile Include="BuilderTests.cs" />
+    <Compile Include="PatchBuildTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +83,11 @@
       <Project>{219522e7-d92f-4f4b-886c-37446d8f452d}</Project>
       <Name>StaticFileUpdater.PatchBuilder</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestFiles\SubDir\C.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

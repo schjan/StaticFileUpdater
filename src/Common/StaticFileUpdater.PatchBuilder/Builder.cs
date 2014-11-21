@@ -50,6 +50,9 @@ namespace StaticFileUpdater.PatchBuilder
             if (ret != 0)
                 return ret;
 
+            var builder = new PatchBuild(op);
+            builder.BuildPatchLocal();
+
             return 0;
         }
 

@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.PatchBuil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.BuildTool.Tests", "Tests\StaticFileUpdater.BuildTool.Tests\StaticFileUpdater.BuildTool.Tests.csproj", "{0E7CA4EF-488A-4144-AEFB-35F6FA08A882}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFileUpdater.Common", "Common\StaticFileUpdater.Common\StaticFileUpdater.Common.csproj", "{1F75E6B6-837C-4A66-AA7E-DF6C14DD131E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{0E7CA4EF-488A-4144-AEFB-35F6FA08A882}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E7CA4EF-488A-4144-AEFB-35F6FA08A882}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E7CA4EF-488A-4144-AEFB-35F6FA08A882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F75E6B6-837C-4A66-AA7E-DF6C14DD131E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F75E6B6-837C-4A66-AA7E-DF6C14DD131E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F75E6B6-837C-4A66-AA7E-DF6C14DD131E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F75E6B6-837C-4A66-AA7E-DF6C14DD131E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +58,6 @@ Global
 		{219522E7-D92F-4F4B-886C-37446D8F452D} = {D5DC4B96-9590-4B5C-8C1F-5940C23C9978}
 		{182853A6-1CA9-43ED-9E27-A6C6FCE013BA} = {DF108EFA-2A2C-426B-9F2E-900B7F5E4BC3}
 		{0E7CA4EF-488A-4144-AEFB-35F6FA08A882} = {DF108EFA-2A2C-426B-9F2E-900B7F5E4BC3}
+		{1F75E6B6-837C-4A66-AA7E-DF6C14DD131E} = {D5DC4B96-9590-4B5C-8C1F-5940C23C9978}
 	EndGlobalSection
 EndGlobal
