@@ -79,6 +79,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\StaticFileUpdater.Common\StaticFileUpdater.Common.csproj">
+      <Project>{1f75e6b6-837c-4a66-aa7e-df6c14dd131e}</Project>
+      <Name>StaticFileUpdater.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Common\StaticFileUpdater.PatchBuilder\StaticFileUpdater.PatchBuilder.csproj">
       <Project>{219522e7-d92f-4f4b-886c-37446d8f452d}</Project>
       <Name>StaticFileUpdater.PatchBuilder</Name>

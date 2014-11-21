@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using NLog;
@@ -19,32 +20,55 @@ namespace StaticFileUpdater.PatchBuilder
             _options = options;
         }
 
-        public void BuildPatchLocal()
+        public PatchFiles BuildPatchLocal()
         {
             logger.Debug(() => "Start building patch local");
 
+            return CheckFiles();
+        }
+
+        protected PatchFiles CheckFiles()
+        {
+            if (string.IsNullOrWhiteSpace(_options.LastPatchDirectory) || !Directory.Exists(_options.LastPatchDirectory))
+            {
+                logger.Error(() => "If patch is build local, LastPatchDirectory is needed");
+                throw new ArgumentNullException("LastPatchDirectory");
+            }
+
             var patchFiles = new PatchFiles();
-            var files = GetAllFilesOfDirRecursive(_options.WorkingDirectory);
+            var newFiles = GetAllFilesOfDirRecursive(_options.WorkingDirectory);
+            var oldFiles = GetAllFilesOfDirRecursive(_options.LastPatchDirectory).ToList();
+            var comparer = new FileComparer();
 
+            foreach (var file in newFiles)
+            {
+                if (oldFiles.Contains(file))
+                {
+                    if (!comparer.FilesAreEqual(Path.Combine(_options.WorkingDirectory, file),
+                        Path.Combine(_options.LastPatchDirectory, file)))
+                        patchFiles.Updated.Add(file);
+                }
+                else
+                {
+                    patchFiles.Added.Add(file);
+                }
+                oldFiles.Remove(file);
+            }
 
+            patchFiles.Deleted = oldFiles;
+
+            return patchFiles;
         }
 
         protected IEnumerable<string> GetAllFilesOfDirRecursive(string directory)
         {
-            return Directory.GetFiles(directory, "*.*", SearchOption.AllDirectories);
+            var skipDirectory = directory.Length;
 
-            //foreach (var str in GetAllFilesOfDir(directory))
-            //{
-            //    yield return str;
-            //}
+            if (!directory.EndsWith("" + Path.DirectorySeparatorChar))
+                skipDirectory++;
 
-            //foreach (var dir in Directory.GetDirectories(directory))
-            //{
-            //    foreach (var str in GetAllFilesOfDirRecursive(directory))
-            //    {
-            //        yield return str;
-            //    }
-            //}
+            return Directory.EnumerateFiles(directory, "*.*", SearchOption.AllDirectories)
+                .Select(f => f.Substring(skipDirectory));
         }
 
         private IEnumerable<string> GetAllFilesOfDir(string directory)

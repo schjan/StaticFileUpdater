@@ -15,5 +15,7 @@ namespace StaticFileUpdater.PatchBuilder
         public bool SilentBuild;
 
         public string OutputDirectory;
+
+        public string LastPatchDirectory;
     }
 }
